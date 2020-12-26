@@ -18,7 +18,7 @@ RUN npm install --silent
 COPY . /app/
 RUN npm run build
 # EXPOSE 3000
-CMD [ "npm", "run", "start" ]
+CMD [ "sudo", "npm", "run", "start" ]
 
 # Production environment
 # FROM nginx:1.16.0-alpine
