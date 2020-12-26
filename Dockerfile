@@ -16,7 +16,7 @@ ENV PATH /app/node_modules/.bin:$PATH
 COPY package.json /app/package.json
 RUN npm install --silent
 RUN npx next build
-COPY . .
+COPY . /app/
 # EXPOSE 3000
 CMD [ "npx", "next", "start" ]
 
