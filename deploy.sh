@@ -1,7 +1,8 @@
+docker-compose up -d --build
 # docker-compose up -d --build > deploy_result
 
-docker build --tag nextjs-test:latest .
-docker run -d -it -p 80:80 nextjs-test:latest
+# docker build --tag nextjs-test:latest .
+# docker run -d -it -p 80:80 nextjs-test:latest
 
 # if [ ! 0 = $? ]; then
 #         message=`cat deploy_result`
