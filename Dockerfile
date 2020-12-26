@@ -2,6 +2,7 @@
 FROM node:12 as base
 WORKDIR /app
 COPY package.json ./
+RUN npm install next -g
 RUN npm install
 ENV CONTINUOUS_INTEGRATION=1
 ENV NODE_ENV=production
