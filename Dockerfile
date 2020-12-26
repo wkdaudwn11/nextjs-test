@@ -18,7 +18,7 @@ RUN npm install --silent
 COPY . /app/
 RUN npm run build
 COPY --from=builder ./.next /app/.next
-# EXPOSE 3000
+EXPOSE 3000
 CMD [ "npm", "run", "start" ]
 
 # Production environment
