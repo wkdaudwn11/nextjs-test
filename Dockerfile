@@ -13,11 +13,9 @@
 FROM node:12.8.0 as builder
 WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
-COPY package.json /app/package.json
-RUN npm install --silent
 COPY . .
+RUN npm install
 RUN npm run build
-COPY ./.next /app/.next
 EXPOSE 3000
 CMD [ "npm", "run", "start" ]
 
