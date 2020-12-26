@@ -15,8 +15,8 @@ WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 COPY package.json /app/package.json
 RUN npm install --silent
-COPY . .
 RUN npx next build
+COPY . .
 # EXPOSE 3000
 CMD [ "npx", "next", "start" ]
 
