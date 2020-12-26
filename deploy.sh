@@ -1,5 +1,3 @@
-rm -rf node_modules
-npm cache clean --force
 docker-compose docker-compose.yml up -d --build > deploy_result
 
 if [ ! 0 = $? ]; then
