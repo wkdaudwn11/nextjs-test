@@ -1,13 +1,23 @@
 # Dockerfile
+# FROM node:12.8.0 as builder
+# WORKDIR /app
+# ENV PATH /app/node_modules/.bin:$PATH
+# COPY package.json /app/package.json
+# RUN npm install
+# COPY . .
+# RUN npx next build
+# EXPOSE 3000
+# CMD [ "npx", "next", "start" ]
+
+# Build environment
 FROM node:12.8.0 as builder
 WORKDIR /app
-COPY package.json ./
-RUN npm install
-ENV CONTINUOUS_INTEGRATION=1
-ENV NODE_ENV=production
+ENV PATH /app/node_modules/.bin:$PATH
+COPY package.json /app/package.json
+RUN npm install --silent
 COPY . .
 RUN npx next build
-EXPOSE 3000
+# EXPOSE 3000
 CMD [ "npx", "next", "start" ]
 
 # Production environment
