@@ -2,14 +2,13 @@
 FROM node:12 as base
 WORKDIR /app
 COPY package.json ./
-RUN npm install next -g
 RUN npm install
 ENV CONTINUOUS_INTEGRATION=1
 ENV NODE_ENV=production
 COPY . .
-RUN npm run build
+RUN npx next build
 EXPOSE 3000
-CMD [ "npm", "start" ]
+CMD [ "npx", "next", "start" ]
 
 # Production environment
 # FROM nginx:1.16.0-alpine
