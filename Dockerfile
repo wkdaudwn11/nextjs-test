@@ -5,15 +5,8 @@ ENV PATH /app/node_modules/.bin:$PATH
 COPY . .
 RUN npm install
 RUN npm run build
-EXPOSE 3000
-CMD [ "npm", "run", "start" ]
-
-# Production environment
-# FROM nginx:1.16.0-alpine
-# RUN rm -rf /etc/nginx/conf.d
-# COPY conf /etc/nginx
-# EXPOSE 80
-# CMD ["nginx", "-g", "daemon off;"]
+# EXPOSE 3000
+# CMD [ "npm", "run", "start" ]
 
 FROM nginx:1.16.0-alpine
 COPY --from=builder /app/.next /usr/share/nginx/html
