@@ -16,9 +16,9 @@ ENV PATH /app/node_modules/.bin:$PATH
 COPY package.json /app/package.json
 RUN npm install --silent
 COPY . /app/
-RUN npx next build
+RUN npm run build
 # EXPOSE 3000
-CMD [ "npx", "next", "start" ]
+CMD [ "npm", "run", "start" ]
 
 # Production environment
 # FROM nginx:1.16.0-alpine
