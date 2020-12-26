@@ -1,4 +1,4 @@
-docker-compose docker-compose.yml up -d --build > deploy_result
+docker-compose up -d --build > deploy_result
 
 if [ ! 0 = $? ]; then
         message=`cat deploy_result`
